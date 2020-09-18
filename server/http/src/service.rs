@@ -463,7 +463,7 @@ mod tests {
             _query: Query,
             _state: DeploymentState,
         ) -> Arc<QueryResult> {
-            Arc::new(QueryResult::new(Some(q::Value::Object(
+            Arc::new(QueryResult::new(vec![Arc::new(q::Value::Object(
                 BTreeMap::from_iter(
                     vec![(
                         String::from("name"),
@@ -471,7 +471,7 @@ mod tests {
                     )]
                     .into_iter(),
                 ),
-            ))))
+            ))]))
         }
 
         async fn run_subscription(
