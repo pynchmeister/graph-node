@@ -463,14 +463,12 @@ mod tests {
             _query: Query,
             _state: DeploymentState,
         ) -> Arc<QueryResult> {
-            Arc::new(QueryResult::new(vec![Arc::new(q::Value::Object(
-                BTreeMap::from_iter(
-                    vec![(
-                        String::from("name"),
-                        q::Value::String(String::from("Jordi")),
-                    )]
-                    .into_iter(),
-                ),
+            Arc::new(QueryResult::new(vec![Arc::new(BTreeMap::from_iter(
+                vec![(
+                    String::from("name"),
+                    q::Value::String(String::from("Jordi")),
+                )]
+                .into_iter(),
             ))]))
         }
 
